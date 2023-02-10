@@ -11,7 +11,8 @@
     "dev:node": "cross-env NODE_ENV=development nodemon --exec 'ts-node --require dotenv/config ./server.ts --watch ./server.ts'",
     "dev:remix": "remix watch",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
-    "typecheck": "tsc -p tsconfig.server.json"
+    "typecheck": "tsc -p tsconfig.server.json",
+    "generate:types": "cross-env payload generate:types"
   },
   "dependencies": {
     "@remix-run/express": "^1.12.0",
