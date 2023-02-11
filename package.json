@@ -8,7 +8,7 @@
     "build:remix": "remix build",
     "build:server": "tsc -p tsconfig.server.json",
     "dev": "remix build && run-p \"dev:*\"",
-    "dev:node": "cross-env NODE_ENV=development nodemon --exec 'ts-node --require dotenv/config ./server.ts --watch ./server.ts'",
+    "dev:node": "cross-env NODE_ENV=development nodemon --exec 'ts-node --require dotenv/config ./server.ts'  --watch ./server.ts",
     "dev:remix": "remix watch",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "typecheck": "tsc -p tsconfig.server.json",
