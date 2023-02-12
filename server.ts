@@ -54,11 +54,29 @@ async function start() {
           return createRequestHandler({
             build: require(BUILD_DIR),
             mode: process.env.NODE_ENV,
+            getLoadContext(req, res) {
+              return {
+                // @ts-expect-error
+                payload: req.payload,
+                // @ts-expect-error
+                user: req?.user,
+                res,
+              };
+            },
           })(req, res, next);
         }
       : createRequestHandler({
           build: require(BUILD_DIR),
           mode: process.env.NODE_ENV,
+          getLoadContext(req, res) {
+            return {
+              // @ts-expect-error
+              payload: req.payload,
+              // @ts-expect-error
+              user: req?.user,
+              res,
+            };
+          },
         })
   );
   const port = process.env.PORT || 3000;
