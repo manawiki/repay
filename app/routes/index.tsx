@@ -1,4 +1,17 @@
+import { useLoaderData } from "@remix-run/react";
+import type { LoaderArgs } from "@remix-run/server-runtime";
+import { json } from "@remix-run/server-runtime";
+
+export const loader = async ({ context: { payload } }: LoaderArgs) => {
+  const users = await payload.find({
+    collection: "users",
+  });
+
+  return json({ userCount: users.totalDocs }, { status: 200 });
+};
+
 export default function Index() {
+  const { userCount } = useLoaderData<typeof loader>();
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
@@ -24,6 +37,11 @@ export default function Index() {
         <li>
           <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
             Remix Docs
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
+            Amount of users: {userCount}
           </a>
         </li>
       </ul>
