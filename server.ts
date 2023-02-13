@@ -28,6 +28,8 @@ async function start() {
     },
   });
 
+  app.use(payload.authenticate);
+
   app.use(compression());
 
   // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
