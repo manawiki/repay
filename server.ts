@@ -49,26 +49,7 @@ async function start() {
 
   app.all(
     "*",
-    process.env.NODE_ENV === "development"
-      ? (req, res, next) => {
-          // NOTE: Not needed for the moment, as we use nodemon to restart the server on file changes. 
-          // purgeRequireCache();
-
-          return createRequestHandler({
-            build: require(BUILD_DIR),
-            mode: process.env.NODE_ENV,
-            getLoadContext(req, res) {
-              return {
-                // @ts-expect-error
-                payload: req.payload,
-                // @ts-expect-error
-                user: req?.user,
-                res,
-              };
-            },
-          })(req, res, next);
-        }
-      : createRequestHandler({
+    createRequestHandler({
           build: require(BUILD_DIR),
           mode: process.env.NODE_ENV,
           getLoadContext(req, res) {
@@ -87,17 +68,4 @@ async function start() {
   app.listen(port, () => {
     console.log(`Express server listening on port ${port}`);
   });
-}
-
-function purgeRequireCache() {
-  // purge require cache on requests for "server side HMR" this won't let
-  // you have in-memory objects between requests in development,
-  // alternatively you can set up nodemon/pm2-dev to restart the server on
-  // file changes, but then you'll have to reconnect to databases/etc on each
-  // change. We prefer the DX of this, so we've included it for you by default
-  for (const key in require.cache) {
-    if (key.startsWith(BUILD_DIR)) {
-      delete require.cache[key];
-    }
-  }
 }
