@@ -51,7 +51,8 @@ async function start() {
     "*",
     process.env.NODE_ENV === "development"
       ? (req, res, next) => {
-          purgeRequireCache();
+          // NOTE: Not needed for the moment, as we use nodemon to restart the server on file changes. 
+          // purgeRequireCache();
 
           return createRequestHandler({
             build: require(BUILD_DIR),
