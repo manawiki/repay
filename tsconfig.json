@@ -14,7 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
-      "payload/generated-types": ["./app/payload-types.ts"]
+      "payload/generated-types": ["./cms/payload-types.ts"]
     },
     "noEmit": true
   }

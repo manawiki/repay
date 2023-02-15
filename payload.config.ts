@@ -9,6 +9,6 @@ export default buildConfig({
   },
   collections: [Users],
   typescript: {
-    outputFile: path.resolve(__dirname, "app/payload-types.ts"),
+    outputFile: path.resolve(__dirname, "cms/payload-types.ts"),
   }
 });
