@@ -5,12 +5,13 @@ import morgan from "morgan";
 import payload from "payload";
 import { createRequestHandler } from "@remix-run/express";
 import invariant from "tiny-invariant";
+import chokidar from "chokidar";
+import { broadcastDevReady } from "@remix-run/node";
 
 require("dotenv").config();
 
 const BUILD_DIR = path.join(process.cwd(), "build");
 
-start();
 
 async function start() {
   const app = express();
@@ -51,9 +52,6 @@ async function start() {
     "*",
     process.env.NODE_ENV === "development"
       ? (req, res, next) => {
-          // NOTE: Not needed for the moment, as we use nodemon to restart the server on file changes. 
-          purgeRequireCache();
-
           return createRequestHandler({
             build: require(BUILD_DIR),
             mode: process.env.NODE_ENV,
@@ -86,18 +84,26 @@ async function start() {
 
   app.listen(port, () => {
     console.log(`Express server listening on port ${port}`);
+    
+    if (process.env.NODE_ENV === 'development') {
+      broadcastDevReady(require(BUILD_DIR))
+   }
   });
 }
 
-function purgeRequireCache() {
-  // purge require cache on requests for "server side HMR" this won't let
-  // you have in-memory objects between requests in development,
-  // alternatively you can set up nodemon/pm2-dev to restart the server on
-  // file changes, but then you'll have to reconnect to databases/etc on each
-  // change. We prefer the DX of this, so we've included it for you by default
-  for (const key in require.cache) {
-    if (key.startsWith(BUILD_DIR)) {
-      delete require.cache[key];
-    }
-  }
+start();
+
+// during dev, we'll keep the build module up to date with the changes
+if (process.env.NODE_ENV === 'development') {
+	const watcher = chokidar.watch(BUILD_DIR, {
+		ignored: ['**/**.map'],
+	})
+	watcher.on('all', () => {
+		for (const key in require.cache) {
+			if (key.startsWith(BUILD_DIR)) {
+				delete require.cache[key]
+			}
+		}
+		broadcastDevReady(require(BUILD_DIR))
+	})
 }
