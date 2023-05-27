@@ -12,16 +12,13 @@ export const loader = async ({ context: { payload } }: LoaderArgs) => {
 
 export default function Index() {
   const { userCount } = useLoaderData<typeof loader>();
+  console.log(userCount);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to RePay</h1>
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="/admin"
-            rel="noreferrer"
-          >
+          <a target="_blank" href="/admin" rel="noreferrer">
             Admin Interface
           </a>
         </li>
@@ -31,7 +28,11 @@ export default function Index() {
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://payloadcms.com/docs" rel="noreferrer">
+          <a
+            target="_blank"
+            href="https://payloadcms.com/docs"
+            rel="noreferrer"
+          >
             Payload Docs
           </a>
         </li>
