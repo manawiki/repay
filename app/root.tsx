@@ -1,4 +1,4 @@
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,6 +7,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+
+import styles from "./tailwind.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const meta: V2_MetaFunction = () => [
   { title: "Welcome to RePay!" },
