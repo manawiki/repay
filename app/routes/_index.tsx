@@ -1,6 +1,11 @@
 import { useLoaderData } from "@remix-run/react";
 import type { LoaderArgs } from "@remix-run/server-runtime";
 import { json } from "@remix-run/server-runtime";
+import type { LinksFunction } from "@remix-run/node";
+
+import styles from "../tailwind.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const loader = async ({ context: { payload } }: LoaderArgs) => {
   const users = await payload.find({
