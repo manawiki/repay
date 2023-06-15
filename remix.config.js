@@ -9,6 +9,7 @@ module.exports = {
     v2_meta: true,
     v2_normalizeFormMethod: true,
     v2_errorBoundary: true,
+    v2_header: true,
     unstable_dev: true,
   },
   // appDirectory: "app",

@@ -1,25 +1,24 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "target": "ES2019",
-    "strict": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
+     "lib": ["DOM", "DOM.Iterable", "ES2019"],
+     "isolatedModules": true,
+     "esModuleInterop": true,
+     "jsx": "react-jsx",
+     "moduleResolution": "node",
+     "resolveJsonModule": true,
+     "strict": true,
+     "allowJs": true,
+     "forceConsistentCasingInFileNames": true,
+     "baseUrl": ".",
+     "paths": {
       "~/*": ["./app/*"],
-      "payload/generated-types": ["./cms/payload-types.ts"]
-    },
-    "noEmit": true
+      "payload/generated-types": ["./cms/payload-types.ts"]     
+     },
+     "noEmit": true,
+     "target": "ES2019"
   },
   "ts-node": {
-    "swc": true,
-    "transpileOnly": true
+     "swc": true
   }
 }
