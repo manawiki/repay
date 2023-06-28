@@ -2,10 +2,11 @@
 
 Simple template to get started with [Remix](https://remix.run) and [PayloadCMS](https://payloadcms.com), without messing with monorepos!
 
+![repay-header](https://github.com/manawiki/repay/assets/84349818/9fc343c2-0c6f-4d2d-a603-c838f8d21156)
 
 ## Development
 
-Copy .env.example to .env and fill your environment variables.
+Copy .env.example to .env and fill the required environment variables.
 
 ```sh
 yarn dev
