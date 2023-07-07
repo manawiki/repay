@@ -12,7 +12,6 @@ require("dotenv").config();
 
 const BUILD_DIR = path.join(process.cwd(), "build");
 
-
 async function start() {
   const app = express();
 
@@ -48,6 +47,8 @@ async function start() {
 
   app.use(morgan("tiny"));
 
+  // Check if the server is running in development mode and reflect realtime changes in the codebase.
+  // We'll also inject payload in the remix handler so we can use it in our routes.
   app.all(
     "*",
     process.env.NODE_ENV === "development"
@@ -84,26 +85,31 @@ async function start() {
 
   app.listen(port, () => {
     console.log(`Express server listening on port ${port}`);
-    
-    if (process.env.NODE_ENV === 'development') {
-      broadcastDevReady(require(BUILD_DIR))
-   }
+
+    if (process.env.NODE_ENV === "development") {
+      broadcastDevReady(require(BUILD_DIR));
+    }
   });
 }
 
 start();
 
 // during dev, we'll keep the build module up to date with the changes
-if (process.env.NODE_ENV === 'development') {
-	const watcher = chokidar.watch(BUILD_DIR, {
-		ignored: ['**/**.map'],
-	})
-	watcher.on('all', () => {
-		for (const key in require.cache) {
-			if (key.startsWith(BUILD_DIR)) {
-				delete require.cache[key]
-			}
-		}
-		broadcastDevReady(require(BUILD_DIR))
-	})
+async function updateServer() {
+  // 1. purge require cache && load updated server build
+  for (const key in require.cache) {
+    if (key.startsWith(BUILD_DIR)) {
+      delete require.cache[key];
+    }
+  }
+  // 2. tell dev server that this app server is now ready
+  broadcastDevReady(require(BUILD_DIR));
+}
+
+if (process.env.NODE_ENV === "development") {
+  const watcher = chokidar.watch(BUILD_DIR, {
+    ignored: ["**/**.map"],
+  });
+  watcher.on("add", updateServer);
+  watcher.on("change", updateServer);
 }
