@@ -11,13 +11,13 @@
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-        "~/*": ["./app/*"],
-        "payload/generated-types": ["./cms/payload-types.ts"],    
+      "~/*": ["./app/*"],
+      "payload/generated-types": ["./cms/payload-types.ts"]
     },
-    "target": "ES2019",
-  },
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "target": "ES2019"
+  }
 }
