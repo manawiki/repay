@@ -94,6 +94,13 @@ function createDevRequestHandler(): RequestHandler {
   async function handleServerUpdate() {
     // 1. re-import the server build
     build = await reimportServer();
+
+    // Add debugger to assist in v2 dev debugging
+    if (build?.assets === undefined) {
+      console.log(build.assets);
+      debugger;
+    }
+
     // 2. tell dev server that this app server is now up-to-date and ready
     broadcastDevReady(build);
   }
