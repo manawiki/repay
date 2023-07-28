@@ -106,7 +106,10 @@ function createDevRequestHandler(): RequestHandler {
   }
 
   chokidar
-    .watch(BUILD_PATH, { ignoreInitial: true })
+    .watch(BUILD_PATH, {
+      ignoreInitial: true,
+      awaitWriteFinish: { stabilityThreshold: 200 },
+    })
     .on("add", handleServerUpdate)
     .on("change", handleServerUpdate);
 
