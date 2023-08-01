@@ -1,5 +1,4 @@
 import * as path from "node:path";
-import chokidar from "chokidar";
 import express from "express";
 import compression from "compression";
 import morgan from "morgan";
@@ -22,6 +21,10 @@ const BUILD_PATH = path.resolve("./build/index.js");
  * @type {ServerBuild}
  */
 let build = require(BUILD_PATH);
+
+// We'll make chokidar a dev dependency so it doesn't get bundled in production.
+const chokidar =
+  process.env.NODE_ENV === "development" ? require("chokidar") : null;
 
 async function start() {
   const app = express();
