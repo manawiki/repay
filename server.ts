@@ -6,10 +6,12 @@ import { createRequestHandler, type RequestHandler } from "@remix-run/express";
 import { broadcastDevReady, installGlobals } from "@remix-run/node";
 import payload from "payload";
 import invariant from "tiny-invariant";
+import sourceMapSupport from "source-map-support";
 
 // patch in Remix runtime globals
 installGlobals();
 require("dotenv").config();
+sourceMapSupport.install();
 
 /**
  * @typedef {import('@remix-run/node').ServerBuild} ServerBuild
