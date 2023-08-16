@@ -1,0 +1,42 @@
+diff --git a/node_modules/@remix-run/dev/dist/compiler/js/compiler.js b/node_modules/@remix-run/dev/dist/compiler/js/compiler.js
+index db610f2..ee8c76f 100644
+--- a/node_modules/@remix-run/dev/dist/compiler/js/compiler.js
++++ b/node_modules/@remix-run/dev/dist/compiler/js/compiler.js
+@@ -32,6 +32,7 @@ var vanillaExtract = require('../plugins/vanillaExtract.js');
+ var invariant = require('../../invariant.js');
+ var hmr = require('./plugins/hmr.js');
+ var analysis = require('../analysis.js');
++var million = require('million/compiler');
+ 
+ function _interopNamespace(e) {
+   if (e && e.__esModule) return e;
+@@ -94,7 +95,7 @@ const createEsbuildConfig = (ctx, refs) => {
+     includeNodeModules: true
+   }), esbuildPluginsNodeModulesPolyfill.nodeModulesPolyfillPlugin(), external.externalPlugin(/^node:.*/, {
+     sideEffects: false
+-  })];
++  }), million.esbuild({ server: true, auto: true })];
+   if (ctx.options.mode === "development" && ctx.config.future.v2_dev) {
+     plugins.push(hmr.hmrPlugin(ctx));
+   }
+diff --git a/node_modules/@remix-run/dev/dist/compiler/server/compiler.js b/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
+index e6b5952..5abe23f 100644
+--- a/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
++++ b/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
+@@ -30,6 +30,7 @@ var routes = require('./plugins/routes.js');
+ var external = require('../plugins/external.js');
+ var cssBundlePlugin = require('../plugins/cssBundlePlugin.js');
+ var analysis = require('../analysis.js');
++var million = require('million/compiler');
+ 
+ function _interopNamespace(e) {
+   if (e && e.__esModule) return e;
+@@ -71,7 +72,7 @@ const createEsbuildConfig = (ctx, refs) => {
+     sideEffects: false
+   }), mdx.mdxPlugin(ctx), emptyModules.emptyModulesPlugin(ctx, /\.client(\.[jt]sx?)?$/), routes.serverRouteModulesPlugin(ctx), entry.serverEntryModulePlugin(ctx), manifest.serverAssetsManifestPlugin(refs), bareImports.serverBareModulesPlugin(ctx), external.externalPlugin(/^node:.*/, {
+     sideEffects: false
+-  })];
++  }), million.esbuild({ server: true, auto: true })];
+   if (ctx.config.serverNodeBuiltinsPolyfill) {
+     plugins.unshift(esbuildPluginsNodeModulesPolyfill.nodeModulesPolyfillPlugin({
+       // Ensure only "modules" option is passed to the plugin
