@@ -2,7 +2,7 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "run-p \"build:1.19.3\"",
+    "build": "run-p \"build:*\"",
     "build:remix": "remix build",
     "build:copyfiles": "copyfiles -u 1 \"cms/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
     "build:payload": "payload build",
