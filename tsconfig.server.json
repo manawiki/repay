@@ -1,23 +1,15 @@
-{
-  "include": ["remix.env.d.ts", "server.ts", "payload.config.ts"],
-  "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "strict": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./app/*"],
-      "payload/generated-types": ["./cms/payload-types.ts"]
-    },
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "target": "ES2019"
-  }
+{  
+   // Extend the root-level config to reuse common options.
+   "extends": "./tsconfig.json",
+   "files": ["remix.env.d.ts", "server.ts", "payload.config.ts"],
+   "include": [],
+   "compilerOptions": {
+      "lib": ["ES2022"],
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "outDir": "dist",
+      "baseUrl": ".",
+      "sourceMap": true,
+      "noEmit": false
+   }
 }

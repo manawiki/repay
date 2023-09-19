@@ -1,25 +1,36 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
-    "isolatedModules": true,
+    /* Base Options: */
     "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "strict": true,
-    "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    //  "verbatimModuleSyntax": true, https://twitter.com/mattpocockuk/status/1704041192588001444
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* If your code runs in the DOM: */
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+
+    /* If your code runs in Node.js: */
+    "isolatedModules": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx",
+
+    /* If NOT transpiling with TypeScript: */
+    "moduleResolution": "Bundler",
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
       "payload/generated-types": ["./cms/payload-types.ts"]
-    },
-    "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "target": "ES2019"
+    }
   },
   "ts-node": {
     "swc": true
