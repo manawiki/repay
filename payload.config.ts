@@ -1,6 +1,6 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { viteBundler } from "@payloadcms/bundler-vite";
+import { slateEditor } from "@payloadcms/richtext-slate";
+import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { buildConfig } from "payload/config";
 import path from "path";
 import Users from "./cms/collections/Users";
@@ -9,9 +9,9 @@ export default buildConfig({
   serverURL: "http://localhost:3000",
   admin: {
     user: Users.slug,
-    bundler: viteBundler(),
+    bundler: webpackBundler(),
   },
-  editor: lexicalEditor({}),
+  editor: slateEditor({}),
   db: mongooseAdapter({
     url: process.env.MONGODB_URI ?? false,
   }),

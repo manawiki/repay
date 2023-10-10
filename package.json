@@ -13,9 +13,9 @@
     "generate:types": "payload generate:types"
   },
   "dependencies": {
-    "@payloadcms/bundler-vite": "^0.1.2",
+    "@payloadcms/bundler-webpack": "^1.0.2",
     "@payloadcms/db-mongodb": "^1.0.2",
-    "@payloadcms/richtext-lexical": "^0.1.5",
+    "@payloadcms/richtext-slate": "^1.0.2",
     "@remix-run/express": "^2.0.0",
     "@remix-run/node": "^2.0.0",
     "@remix-run/react": "^2.0.0",
