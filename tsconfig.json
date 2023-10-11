@@ -1,19 +1,29 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
+    /* Base Options: */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "es2022",
+    //  "verbatimModuleSyntax": true, https://twitter.com/mattpocockuk/status/1704041192588001444
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
+
+    /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
+
+    /* If your code runs in the DOM: */
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
+
+    /* If your code runs in Node.js: */
     "isolatedModules": true,
     "noImplicitAny": true,
     "jsx": "react-jsx",
+
+    /* If NOT transpiling with TypeScript: */
     "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
