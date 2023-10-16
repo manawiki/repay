@@ -26,4 +26,4 @@ COPY --from=builder /home/node/build ./build
 
 EXPOSE 4040
 
-CMD ["yarn", "run", "start:core"]
+CMD ["yarn", "run", "start"]
