@@ -15,7 +15,7 @@
   "dependencies": {
     "@payloadcms/bundler-vite": "^0.1.2",
     "@payloadcms/db-mongodb": "^1.0.3",
-    "@payloadcms/richtext-slate": "^1.0.6",
+    "@payloadcms/richtext-lexical": "^0.1.12",
     "@remix-run/express": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
