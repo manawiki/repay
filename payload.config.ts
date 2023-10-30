@@ -1,5 +1,5 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { slateEditor } from "@payloadcms/richtext-slate";
 import { viteBundler } from "@payloadcms/bundler-vite";
 import { buildConfig } from "payload/config";
 import path from "path";
@@ -18,7 +18,7 @@ export default buildConfig({
       },
     }),
   },
-  editor: lexicalEditor({}),
+  editor: slateEditor({}),
   db: mongooseAdapter({
     url: process.env.MONGODB_URI ?? false,
   }),
