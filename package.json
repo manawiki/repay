@@ -15,7 +15,6 @@
     "@payloadcms/bundler-vite": "^0.1.3",
     "@payloadcms/db-mongodb": "^1.0.5",
     "@payloadcms/richtext-lexical": "^0.1.16",
-    "@payloadcms/richtext-slate": "^1.1.0",
     "@remix-run/express": "^2.2.0",
     "@remix-run/node": "^2.2.0",
     "@remix-run/react": "^2.2.0",
