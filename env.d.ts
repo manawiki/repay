@@ -40,7 +40,7 @@ declare module "@remix-run/express" {
     getLoadContext,
     mode,
   }: {
-    build: ServerBuild;
+    build: ServerBuild | (() => Promise<ServerBuild>);
     getLoadContext?: GetLoadContextFunction;
     mode?: string;
   }): RequestHandler;
