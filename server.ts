@@ -86,7 +86,7 @@ async function start() {
     console.log(`Express server listening on port ${port}`);
 
     if (process.env.NODE_ENV === "development") {
-      broadcastDevReady(build);
+      await broadcastDevReady(build);
     }
   });
 }
@@ -106,11 +106,11 @@ function createDevRequestHandler(): RequestHandler {
     }
 
     // 2. tell dev server that this app server is now up-to-date and ready
-    broadcastDevReady(build);
+    await broadcastDevReady(build);
   }
 
   chokidar
-    .watch(WATCH_PATH, { ignoreInitial: true })
+    ?.watch(WATCH_PATH, { ignoreInitial: true })
     .on("add", handleServerUpdate)
     .on("change", handleServerUpdate);
 
