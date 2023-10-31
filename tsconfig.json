@@ -24,7 +24,6 @@
     "jsx": "react-jsx",
 
     /* If NOT transpiling with TypeScript: */
-    "module:": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
