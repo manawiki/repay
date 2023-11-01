@@ -20,10 +20,9 @@ sourceMapSupport.install();
 async function start() {
   const app = express();
 
-  // Start payload
+  // Start Payload CMS
   invariant(process.env.PAYLOAD_SECRET, "PAYLOAD_SECRET is required");
 
-  // Initialize Payload
   await payload.init({
     secret: process.env.PAYLOAD_SECRET,
     express: app,
@@ -34,7 +33,19 @@ async function start() {
 
   app.use(payload.authenticate);
 
-  // handle asset requests
+  // Express Server setup
+  app.use(compression());
+
+  // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
+  app.disable("x-powered-by");
+
+  // Everything else (like favicon.ico) is cached for an hour. You may want to be
+  // more aggressive with this caching.
+  app.use(express.static("public", { maxAge: "1h" }));
+
+  app.use(morgan("tiny"));
+
+  // handle Remix asset requests
   let vite =
     process.env.NODE_ENV === "production"
       ? undefined
@@ -49,18 +60,7 @@ async function start() {
     );
   }
 
-  app.use(compression());
-
-  // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
-  app.disable("x-powered-by");
-
-  // Everything else (like favicon.ico) is cached for an hour. You may want to be
-  // more aggressive with this caching.
-  app.use(express.static("public", { maxAge: "1h" }));
-
-  app.use(morgan("tiny"));
-
-  // handle SSR requests
+  // handle Remix SSR requests
   app.all(
     "*",
     createRequestHandler({
