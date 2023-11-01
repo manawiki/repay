@@ -3,11 +3,10 @@
   "sideEffects": false,
   "scripts": {
     "build": "run-p \"build:*\"",
-    "build:remix": "remix build",
+    "build:remix": "vite build && vite build --ssr",
     "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
-    "dev": "remix dev -c \"npm run dev:node\" --manual",
-    "dev:node": "node -r ts-node/register --watch-path ./server.ts --watch ./server.ts",
+    "dev": "node -r ts-node/register --watch-path ./server.ts --watch ./server.ts",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "typecheck": "tsc -p tsconfig.server.json",
     "generate:types": "payload generate:types"
@@ -16,10 +15,9 @@
     "@payloadcms/bundler-vite": "^0.1.3",
     "@payloadcms/db-mongodb": "^1.0.5",
     "@payloadcms/richtext-lexical": "^0.1.16",
-    "@payloadcms/richtext-slate": "^1.1.0",
-    "@remix-run/express": "^2.1.0",
-    "@remix-run/node": "^2.1.0",
-    "@remix-run/react": "^2.1.0",
+    "@remix-run/express": "*",
+    "@remix-run/node": "*",
+    "@remix-run/react": "*",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
@@ -33,8 +31,8 @@
     "tiny-invariant": "^1.3.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.1.0",
-    "@remix-run/eslint-config": "^2.1.0",
+    "@remix-run/dev": "*",
+    "@remix-run/eslint-config": "*",
     "@swc/core": "1.3.76",
     "@types/compression": "^1.7.4",
     "@types/express": "^4.17.20",
@@ -50,7 +48,9 @@
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "engines": {
     "node": ">=18"

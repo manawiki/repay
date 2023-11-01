@@ -1,7 +1,7 @@
 {
   // Extend the root-level config to reuse common options.
   "extends": "./tsconfig.json",
-  "files": ["remix.env.d.ts", "server.ts", "payload.config.ts"],
+  "files": ["env.d.ts", "server.ts", "payload.config.ts"],
   "include": [],
   "compilerOptions": {
     "lib": ["ES2022"],

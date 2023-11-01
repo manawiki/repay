@@ -1,5 +1,5 @@
-/// <reference types="@remix-run/dev" />
-/// <reference types="@remix-run/node/globals" />
+/// <reference types="@remix-run/node" />
+/// <reference types="vite/client" />
 
 import type { User } from "payload/generated-types";
 import type { Response, Request, NextFunction } from "express";
@@ -40,7 +40,7 @@ declare module "@remix-run/express" {
     getLoadContext,
     mode,
   }: {
-    build: ServerBuild;
+    build: ServerBuild | (() => Promise<ServerBuild>);
     getLoadContext?: GetLoadContextFunction;
     mode?: string;
   }): RequestHandler;
