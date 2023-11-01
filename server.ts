@@ -80,10 +80,8 @@ async function start() {
     })
   );
 
-  const port = 3000;
-  app.listen(port, () =>
-    console.log("Express server listening on http://localhost:" + port)
-  );
+  const port = process.env.PORT || 3000;
+  console.log("Express server listening on http://localhost:" + port);
 }
 
 start();

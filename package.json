@@ -2,7 +2,7 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "run-p \"build:*\"",
+    "build": "run-s \"build:*\"",
     "build:remix": "vite build && vite build --ssr",
     "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
