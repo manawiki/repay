@@ -8,9 +8,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import styles from "./tailwind.css?url";
-
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+//css should be imported as an side effect for Vite
+import "./tailwind.css";
 
 export const meta: MetaFunction = () => [
   { title: "Welcome to RePay!" },
