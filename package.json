@@ -6,7 +6,7 @@
     "build:remix": "vite build && vite build --ssr",
     "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
-    "dev": "node -r ts-node/register --watch-path ./server.ts",
+    "dev": "node -r ts-node/register --watch-path ./server.ts server.ts",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "typecheck": "tsc -p tsconfig.server.json",
     "generate:types": "payload generate:types"
