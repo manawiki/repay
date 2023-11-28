@@ -13,7 +13,7 @@
     "clean": "shx rm -rf node_modules dist build public/build"
   },
   "dependencies": {
-    "@payloadcms/bundler-vite": "0.1.3",
+    "@payloadcms/bundler-vite": "^0.1.5",
     "@payloadcms/db-mongodb": "^1.0.8",
     "@payloadcms/richtext-lexical": "^0.2.0",
     "@remix-run/express": "^2.3.1",
@@ -25,7 +25,7 @@
     "express": "^4.18.2",
     "isbot": "^3.7.0",
     "morgan": "^1.10.0",
-    "payload": "^2.2.1",
+    "payload": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "source-map-support": "^0.5.21",
