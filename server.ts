@@ -5,10 +5,7 @@ import sourceMapSupport from "source-map-support";
 import payload from "payload";
 import invariant from "tiny-invariant";
 
-import {
-  unstable_createViteServer,
-  unstable_loadViteServerBuild,
-} from "@remix-run/dev";
+import { unstable_viteServerBuildModuleId } from "@remix-run/dev";
 import { createRequestHandler } from "@remix-run/express";
 import { installGlobals } from "@remix-run/node";
 
@@ -19,6 +16,17 @@ sourceMapSupport.install();
 
 async function start() {
   const app = express();
+
+  const vite =
+    process.env.NODE_ENV === "production"
+      ? undefined
+      : await import("vite").then(({ createServer }) =>
+          createServer({
+            server: {
+              middlewareMode: true,
+            },
+          })
+        );
 
   // Start Payload CMS
   invariant(process.env.PAYLOAD_SECRET, "PAYLOAD_SECRET is required");
@@ -46,19 +54,16 @@ async function start() {
   app.use(morgan("tiny"));
 
   // handle Remix asset requests
-  let vite =
-    process.env.NODE_ENV === "production"
-      ? undefined
-      : await unstable_createViteServer();
-
   if (vite) {
     app.use(vite.middlewares);
   } else {
     app.use(
-      "/build",
-      express.static("public/build", { immutable: true, maxAge: "1y" })
+      "/assets",
+      express.static("build/client/assets", { immutable: true, maxAge: "1y" })
     );
   }
+
+  app.use(express.static("build/client", { maxAge: "1h" }));
 
   // handle Remix SSR requests
   app.all(
@@ -66,10 +71,8 @@ async function start() {
     createRequestHandler({
       // @ts-ignore
       build: vite
-        ? () => {
-            if (vite) return unstable_loadViteServerBuild(vite);
-          }
-        : await import("./build/index.js"),
+        ? () => vite.ssrLoadModule(unstable_viteServerBuildModuleId)
+        : await import("./build/server/index.js"),
       getLoadContext(req, res) {
         return {
           payload: req.payload,
