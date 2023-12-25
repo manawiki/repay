@@ -5,7 +5,6 @@ import sourceMapSupport from "source-map-support";
 import payload from "payload";
 import invariant from "tiny-invariant";
 
-import { unstable_viteServerBuildModuleId } from "@remix-run/dev";
 import { createRequestHandler } from "@remix-run/express";
 import { installGlobals } from "@remix-run/node";
 
@@ -71,7 +70,7 @@ async function start() {
     createRequestHandler({
       // @ts-ignore
       build: vite
-        ? () => vite.ssrLoadModule(unstable_viteServerBuildModuleId)
+        ? () => vite.ssrLoadModule("virtual:remix/server-build")
         : await import("./build/server/index.js"),
       getLoadContext(req, res) {
         return {
