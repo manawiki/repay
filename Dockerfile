@@ -10,9 +10,6 @@ LABEL fly_launch_runtime="Remix"
 WORKDIR /app
 
 # Set production environment
-ARG STATIC_URL
-ENV STATIC_URL $STATIC_URL
-
 ENV NODE_ENV="production"
 ARG YARN_VERSION=1.22.21
 RUN npm install -g yarn@$YARN_VERSION --force
@@ -27,7 +24,7 @@ RUN apk update && \
 
 # Install node modules
 COPY --link package.json  ./
-RUN yarn install  --production=false
+RUN yarn install --production=false
 
 # Copy application code
 COPY --link . .
