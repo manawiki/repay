@@ -18,4 +18,4 @@ We'll adopt Vite early to help shake out any growing pains.
 
 ## Consequences
 
-Breaking changes. Until PayloadCMS have ESM releases, we'll continue to have CJS interop issues in Vite.
+The CJS build of Vite's Node API is deprecated. We'll continue to see CJS interop issues until PayloadCMS ships ESM releases.
