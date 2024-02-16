@@ -6,7 +6,7 @@ import payload from "payload";
 import invariant from "tiny-invariant";
 
 import { createRequestHandler } from "@remix-run/express";
-import { installGlobals } from "@remix-run/node";
+import { installGlobals, type ServerBuild } from "@remix-run/node";
 
 // patch in Remix runtime globals
 installGlobals();
@@ -68,9 +68,11 @@ async function start() {
   app.all(
     "*",
     createRequestHandler({
-      // @ts-expect-error
       build: vite
-        ? () => vite.ssrLoadModule("virtual:remix/server-build")
+        ? () =>
+            vite.ssrLoadModule(
+              "virtual:remix/server-build"
+            ) as Promise<ServerBuild>
         : await import("./build/server/index.js"),
       getLoadContext(req, res) {
         return {

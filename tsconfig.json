@@ -14,6 +14,7 @@
     "isolatedModules": true,
     "noImplicitAny": true,
     "jsx": "react-jsx",
+    "module": "NodeNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
