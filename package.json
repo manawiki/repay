@@ -1,21 +1,21 @@
 {
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
     "build": "run-s \"build:*\"",
     "build:remix": "remix vite:build",
     "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
-    "dev": "node -r ts-node/register --watch-path ./server.ts server.ts",
+    "dev": "tsx server.mts",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "generate:types": "payload generate:types",
     "clean": "shx rm -rf node_modules dist build public/build",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@payloadcms/bundler-vite": "^0.1.6",
-    "@payloadcms/db-mongodb": "^1.4.2",
-    "@payloadcms/richtext-lexical": "^0.7.0",
+    "@payloadcms/db-mongodb": "3.0.0-alpha.44",
+    "@payloadcms/richtext-lexical": "3.0.0-alpha.44",
     "@remix-run/express": "^2.7.0",
     "@remix-run/node": "^2.7.0",
     "@remix-run/react": "^2.7.0",
@@ -25,7 +25,7 @@
     "express": "^4.18.2",
     "isbot": "^5.1.0",
     "morgan": "^1.10.0",
-    "payload": "^2.11.1",
+    "payload": "3.0.0-alpha.44",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "source-map-support": "^0.5.21",
@@ -49,6 +49,7 @@
     "shx": "^0.3.4",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
     "typescript": "^5.3.3",
     "vite": "^5.1.3",
     "vite-tsconfig-paths": "^4.3.1"
