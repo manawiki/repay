@@ -47,13 +47,13 @@ async function start() {
     build: vite
       ? () => vite.ssrLoadModule("virtual:remix/server-build")
       : await import("./build/server/index.js"),
-    //  getLoadContext(req, res) {
-    //         return {
-    //           payload: req.payload,
-    //           user: req?.user,
-    //           res,
-    //         };
-    //       },
+    getLoadContext(req, res) {
+      return {
+        payload,
+        // user
+        res,
+      };
+    },
   });
 
   // Start Payload CMS
