@@ -2,17 +2,32 @@ import express from "express";
 import compression from "compression";
 import morgan from "morgan";
 import sourceMapSupport from "source-map-support";
-import payload from "payload";
+import { getPayload } from "payload";
 import invariant from "tiny-invariant";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import { createRequestHandler } from "@remix-run/express";
 import { installGlobals, type ServerBuild } from "@remix-run/node";
+import { loadConfig } from "./loadConfig.js";
 
 // patch in Remix runtime globals
 installGlobals();
 dotenv.config();
 sourceMapSupport.install();
+
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+const configPath = path.resolve(dirname, "./payload.config.ts");
+console.log("configPath", configPath);
+console.log("loading config...");
+const config = await loadConfig(configPath);
+console.log("loaded config!", config);
+
+const payload = await getPayload({ config });
+
+console.log("COLLECTIONS", payload.collections);
 
 async function start() {
   const app = express();
@@ -42,7 +57,7 @@ async function start() {
   });
 
   // Start Payload CMS
-  invariant(process.env.PAYLOAD_SECRET, "PAYLOAD_SECRET is required");
+  // invariant(process.env.PAYLOAD_SECRET, "PAYLOAD_SECRET is required");
 
   // await payload.init({
   //   secret: process.env.PAYLOAD_SECRET,
