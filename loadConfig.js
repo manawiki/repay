@@ -1,11 +1,19 @@
 // loadConfig.ts
 
 import { createRequire } from "module";
+import path from "path";
+import { fileURLToPath } from "url";
 
-export const loadConfig = async (path) => {
-  console.log("inside loadConfig");
+export const loadConfig = async (configPath) => {
+  const filename = fileURLToPath(import.meta.url);
+  const dirname = path.dirname(filename);
+  const fullConfigPath = path.resolve(dirname, "./payload.config.ts");
+  console.log("configPath", fullConfigPath);
+  //   console.log("loading config...");
+
+  //   console.log("inside loadConfig");
   const require = createRequire(import.meta.url);
-  console.log("inside loadConfig require typeof", typeof require);
+  //   console.log("inside loadConfig require typeof", typeof require);
 
   const CLIENT_EXTENSIONS = [
     ".scss",
@@ -23,10 +31,10 @@ export const loadConfig = async (path) => {
     require.extensions[ext] = () => null;
   });
 
-  console.log("inside loadConfig path", path);
+  //   console.log("inside loadConfig path", configPath);
 
-  const config = require(path).default;
-  console.log("inside loadConfig config", config);
+  const config = require(configPath).default;
+  //   console.log("inside loadConfig config", config);
 
   return config;
 };
