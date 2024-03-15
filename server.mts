@@ -11,9 +11,11 @@ import { fileURLToPath } from "url";
 import { createRequestHandler } from "@remix-run/express";
 import { installGlobals, type ServerBuild } from "@remix-run/node";
 import { loadConfig } from "./loadConfig.js";
+import { auth } from "./auth.ts";
+import { IncomingHttpHeaders } from "http";
 
 // patch in Remix runtime globals
-installGlobals();
+// installGlobals();
 dotenv.config();
 sourceMapSupport.install();
 
@@ -23,11 +25,11 @@ const configPath = path.resolve(dirname, "./payload.config.ts");
 console.log("configPath", configPath);
 console.log("loading config...");
 const config = await loadConfig(configPath);
-console.log("loaded config!", config);
+console.log("loaded config!");
 
 const payload = await getPayload({ config });
 
-console.log("COLLECTIONS", payload.collections);
+// console.log("COLLECTIONS", payload.collections);
 
 async function start() {
   const app = express();
@@ -44,13 +46,23 @@ async function start() {
         );
 
   const remixHandler = createRequestHandler({
+    // @ts-expect-error
     build: vite
       ? () => vite.ssrLoadModule("virtual:remix/server-build")
       : await import("./build/server/index.js"),
-    getLoadContext(req, res) {
+    async getLoadContext(req, res) {
+      // @ts-expect-error
+      const headers = new Headers(req.headers);
+
+      // console.log(headers);
+
+      const result = await auth({ headers, payload });
+
+      // console.log(result);
+
       return {
         payload,
-        // user
+        user: result?.user,
         res,
       };
     },

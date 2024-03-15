@@ -2,10 +2,14 @@ import type { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/server-runtime";
 
-export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
+export const loader = async ({
+  context: { payload, user },
+}: LoaderFunctionArgs) => {
   const users = await payload.find({
     collection: "users",
   });
+
+  console.log({ user });
 
   return json({ userCount: users.totalDocs }, { status: 200 });
 };
