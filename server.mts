@@ -14,22 +14,11 @@ import { loadConfig } from "./loadConfig.js";
 import { auth } from "./auth.ts";
 import { IncomingHttpHeaders } from "http";
 
-// patch in Remix runtime globals
-// installGlobals();
 dotenv.config();
-sourceMapSupport.install();
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
-const configPath = path.resolve(dirname, "./payload.config.ts");
-console.log("configPath", configPath);
-console.log("loading config...");
-const config = await loadConfig(configPath);
-console.log("loaded config!");
-
+// initiate payload local API
+const config = await loadConfig("./payload.config.ts");
 const payload = await getPayload({ config });
-
-// console.log("COLLECTIONS", payload.collections);
 
 async function start() {
   const app = express();
@@ -67,19 +56,6 @@ async function start() {
       };
     },
   });
-
-  // Start Payload CMS
-  // invariant(process.env.PAYLOAD_SECRET, "PAYLOAD_SECRET is required");
-
-  // await payload.init({
-  //   secret: process.env.PAYLOAD_SECRET,
-  //   express: app,
-  //   onInit: () => {
-  //     payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
-  //   },
-  // });
-
-  // app.use(payload.authenticate);
 
   // Express Server setup
   app.use(compression());
