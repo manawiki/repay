@@ -27,6 +27,11 @@ export default function Index() {
           </a>
         </li>
         <li>
+          <a target="_blank" href="/my-route" rel="noreferrer">
+            Test Next Route
+          </a>
+        </li>
+        <li>
           <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
             Remix Docs
           </a>

@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,17 +14,26 @@
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "noImplicitAny": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
+      "@payload-config": ["./payload.config.ts"],
       "~/*": ["./app/*"],
       "payload/generated-types": ["./cms/payload-types.ts"]
-    }
+    },
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "ts-node": {
     "swc": true
-  }
+  },
+  "exclude": ["node_modules"]
 }
