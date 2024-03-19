@@ -8,7 +8,7 @@ export default defineConfig({
       ignoredRouteFiles: ["**/.*"],
       tailwind: true,
       postcss: true,
-      appDirectory: "remix-app",
+      // appDirectory: "app",
       // assetsBuildDirectory: "public/build",
       // publicPath: "/build/",
       // serverBuildPath: "build/index.js",

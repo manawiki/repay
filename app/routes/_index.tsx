@@ -22,11 +22,6 @@ export default function Index() {
       <h1>Welcome to RePay</h1>
       <ul className="list-disc">
         <li>
-          <a target="_blank" href="/admin" rel="noreferrer">
-            Admin Interface
-          </a>
-        </li>
-        <li>
           <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
             Remix Docs
           </a>
@@ -41,6 +36,13 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <p>
+        This version of Repay drops the NextJS dependency and uses Payload
+        purely as a ORM via the Local API.
+      </p>
+      <p>
+        Future iterations will deploy REST/GraphQL endpoints as Remix routes.
+      </p>
     </div>
   );
 }
