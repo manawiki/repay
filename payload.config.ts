@@ -1,5 +1,5 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+// import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload/config";
 import path from "path";
 import Users from "./cms/collections/Users";
@@ -8,7 +8,10 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  editor: lexicalEditor({}),
+  // editor: lexicalEditor({}),
+  editor: {
+    validate: () => true,
+  },
   db: mongooseAdapter({
     url: process.env.MONGODB_URI ?? false,
   }),

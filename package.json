@@ -15,8 +15,6 @@
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "3.0.0-alpha.48",
-    "@payloadcms/next": "3.0.0-alpha.48",
-    "@payloadcms/richtext-lexical": "3.0.0-alpha.48",
     "@remix-run/express": "^2.7.0",
     "@remix-run/node": "^2.7.0",
     "@remix-run/react": "^2.7.0",
@@ -25,7 +23,6 @@
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "isbot": "^5.1.0",
-    "next": "14.2.0-canary.7",
     "morgan": "^1.10.0",
     "payload": "3.0.0-alpha.48",
     "react": "^18.2.0",
