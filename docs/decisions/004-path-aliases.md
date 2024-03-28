@@ -6,14 +6,15 @@ Status: accepted
 
 ## Context
 
-Payload 3 ships as ESM, which remove the final blocker stopping RePay to fully migrate.
+Typescript 5.4 ships subpath aliasing "#" from package.json. Using "#app/" in lieu of "~" will help with sharing react components between Remix and Payload.
+
+- [Annoucing Typescript 5.4: Auto-Import Support for Subpath Imports](https://devblogs.microsoft.com/typescript/announcing-typescript-5-4/#auto-import-support-for-subpath-imports)
+- [Epic-Stack Decision Doc: Imports](https://github.com/epicweb-dev/epic-stack/blob/main/docs/decisions/031-imports.md)
 
 ## Decision
 
-RePay will be ESM by default.
+Replace "~/" with "#app/" in all imports.
 
 ## Consequences
 
-Might cause problems when upgrading from older releases.
-
-[See this guide CJS/ESM migration](https://alemtuzlak.hashnode.dev/migrating-a-v1-cjs-remix-project-to-remix-vite-esm).
+Requires updating all imports; unfamiliar syntax for Remix devs.
