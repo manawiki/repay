@@ -16,7 +16,7 @@ let nextApp = next({ dev: process.env.NODE_ENV !== "production" });
 let handle = nextApp.getRequestHandler();
 await nextApp.prepare();
 
-function nextHandler(req, res) {
+function nextHandler(req: any, res: any) {
   return handle(req, res);
 }
 
