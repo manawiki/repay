@@ -1,6 +1,5 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
@@ -8,12 +7,11 @@ export default defineConfig({
       ignoredRouteFiles: ["**/.*"],
       tailwind: true,
       postcss: true,
-      // appDirectory: "app",
+      appDirectory: "remix-app",
       // assetsBuildDirectory: "public/build",
       // publicPath: "/build/",
       // serverBuildPath: "build/index.js",
     }),
-    tsconfigPaths(),
   ],
   logLevel: "warn",
 });
