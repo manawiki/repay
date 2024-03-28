@@ -1,5 +1,10 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,19 +16,28 @@
     "moduleDetection": "force",
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
     "isolatedModules": true,
     "noImplicitAny": true,
     "jsx": "preserve",
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@payload-config": ["./payload.config.ts"],
-      "~/*": ["./app/*"],
-      "payload/generated-types": ["./cms/payload-types.ts"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@payload-config": [
+        "./payload.config.ts"
+      ],
+      "payload/generated-types": [
+        "./cms/payload-types.ts"
+      ]
     },
     "incremental": true,
     "plugins": [
@@ -35,5 +49,7 @@
   "ts-node": {
     "swc": true
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

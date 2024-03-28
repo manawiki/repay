@@ -1,3 +1,4 @@
+// import { Test } from "#app/test.tsx";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/server-runtime";
@@ -46,6 +47,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      {/* <Test /> */}
     </div>
   );
 }
