@@ -1,17 +1,10 @@
-import type { Payload, PayloadRequest } from "payload/types";
-
 import {
   getAccessResults,
   getAuthenticatedUser,
   parseCookies,
 } from "payload/auth";
 
-type Args = {
-  headers: Request["headers"];
-  payload: Payload;
-};
-
-export const auth = async ({ headers, payload }: Args) => {
+export const auth = async ({ headers, payload }) => {
   const cookies = parseCookies(headers);
 
   //   console.log(cookies);
@@ -23,7 +16,6 @@ export const auth = async ({ headers, payload }: Args) => {
   });
 
   const permissions = await getAccessResults({
-    // @ts-ignore
     req: {
       context: {},
       headers,
@@ -32,7 +24,7 @@ export const auth = async ({ headers, payload }: Args) => {
       payloadAPI: "REST",
       t: undefined,
       user,
-    } as PayloadRequest,
+    },
   });
 
   return {

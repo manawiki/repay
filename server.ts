@@ -7,7 +7,7 @@ import next from "next";
 
 import { createRequestHandler } from "@remix-run/express";
 import { loadConfig } from "./loadConfig.js";
-import { auth } from "./auth.ts";
+import { auth } from "./auth.js";
 
 dotenv.config();
 
