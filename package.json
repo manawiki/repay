@@ -3,9 +3,8 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "run-s \"build:*\"",
+    "build": "run-p \"build:*\"",
     "build:remix": "remix vite:build",
-    "build:payload": "payload build",
     "build:server": "tsc -p tsconfig.server.json",
     "dev": "tsx server.ts",
     "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",

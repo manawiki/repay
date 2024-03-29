@@ -3,7 +3,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "target": "es2022",
     "allowJs": true,
