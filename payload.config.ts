@@ -8,7 +8,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  // editor: lexicalEditor({}),
+  // @ts-expect-error
   editor: {
     validate: () => true,
   },

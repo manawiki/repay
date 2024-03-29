@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 export const loadConfig = async (configPath) => {
   const filename = fileURLToPath(import.meta.url);
   const dirname = path.dirname(filename);
-  const fullConfigPath = path.resolve(dirname, "./payload.config.ts");
+  const fullConfigPath = path.resolve(dirname, configPath);
   console.log("configPath", fullConfigPath);
   //   console.log("loading config...");
 
