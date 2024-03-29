@@ -9,8 +9,11 @@ import {
 } from "@remix-run/react";
 
 //css should be imported as an side effect for Vite
-import "./tailwind.css";
+import tailwind from "./tailwind.css?url";
 
+export const links = () => {
+  return [{ rel: "stylesheet", href: tailwind }];
+};
 export const meta: MetaFunction = () => [
   { title: "Welcome to RePay!" },
   { charSet: "utf-8" },

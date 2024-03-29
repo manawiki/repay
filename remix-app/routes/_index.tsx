@@ -1,11 +1,16 @@
+// import { Test } from "#app/test.tsx";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/server-runtime";
 
-export const loader = async ({ context: { payload } }: LoaderFunctionArgs) => {
+export const loader = async ({
+  context: { payload, user },
+}: LoaderFunctionArgs) => {
   const users = await payload.find({
     collection: "users",
   });
+
+  console.log({ user });
 
   return json({ userCount: users.totalDocs }, { status: 200 });
 };
@@ -23,6 +28,11 @@ export default function Index() {
           </a>
         </li>
         <li>
+          <a target="_blank" href="/my-route" rel="noreferrer">
+            Test Next Route
+          </a>
+        </li>
+        <li>
           <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
             Remix Docs
           </a>
@@ -37,6 +47,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      {/* <Test /> */}
     </div>
   );
 }

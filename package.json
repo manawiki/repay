@@ -1,39 +1,44 @@
 {
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
     "build": "run-s \"build:*\"",
     "build:remix": "remix vite:build",
-    "build:payload": "payload build",
+    "build:payload": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "build:server": "tsc -p tsconfig.server.json",
-    "dev": "node -r ts-node/register --watch-path ./server.ts server.ts",
-    "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
+    "dev": "tsx server.ts",
+    "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production tsx server.ts",
     "generate:types": "payload generate:types",
     "clean": "shx rm -rf node_modules dist build public/build",
     "typecheck": "tsc"
   },
+  "imports": {
+    "#*": "./*"
+  },
   "dependencies": {
-    "@payloadcms/bundler-vite": "^0.1.6",
-    "@payloadcms/db-mongodb": "^1.4.2",
-    "@payloadcms/richtext-lexical": "^0.7.0",
-    "@remix-run/express": "^2.7.0",
-    "@remix-run/node": "^2.7.0",
-    "@remix-run/react": "^2.7.0",
+    "@payloadcms/db-mongodb": "3.0.0-alpha.48",
+    "@payloadcms/next": "3.0.0-alpha.48",
+    "@payloadcms/richtext-lexical": "3.0.0-alpha.48",
+    "@remix-run/express": "^2.8.1",
+    "@remix-run/node": "^2.8.1",
+    "@remix-run/react": "^2.8.1",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "isbot": "^5.1.0",
     "morgan": "^1.10.0",
-    "payload": "^2.11.1",
+    "next": "14.2.0-canary.7",
+    "payload": "3.0.0-alpha.48",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "source-map-support": "^0.5.21",
     "tiny-invariant": "^1.3.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.7.0",
-    "@remix-run/eslint-config": "^2.7.0",
+    "@remix-run/dev": "^2.8.1",
+    "@remix-run/eslint-config": "^2.8.1",
     "@swc/core": "1.3.107",
     "@types/compression": "^1.7.5",
     "@types/express": "^4.17.21",
@@ -43,17 +48,18 @@
     "@types/react-dom": "^18.2.19",
     "@types/source-map-support": "^0.5.10",
     "autoprefixer": "^10.4.17",
+    "esbuild": "^0.20.2",
     "eslint": "^8.56.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
     "shx": "^0.3.4",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.3",
-    "vite-tsconfig-paths": "^4.3.1"
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.6"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
