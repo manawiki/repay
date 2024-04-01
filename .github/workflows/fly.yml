@@ -13,7 +13,7 @@ jobs:
     name: Deploy core app
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --app "$APP_NAME" --config ./fly.toml --remote-only
         env:

@@ -12,31 +12,19 @@ kill_timeout = '5s'
   dockerfile = 'Dockerfile'
 
 [env]
-  PORT = '8080'
+  PORT = '3000'
 
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
-  processes = ['app']
-
-[[services]]
-  protocol = 'tcp'
-  internal_port = 8080
-  processes = ['app']
-
-[[services.ports]]
-    port = 80
-    handlers = ['http']
-    force_https = true
-
-[[services.ports]]
-    port = 443
-    handlers = ['tls', 'http']
-
-  [services.concurrency]
-    type = 'requests'
-    hard_limit = 250
-    soft_limit = 200
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 800
+    hard_limit = 1000
 
 [[vm]]
   cpu_kind = 'shared'
