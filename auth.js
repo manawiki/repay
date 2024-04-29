@@ -1,15 +1,13 @@
 import {
+  executeAuthStrategies,
   getAccessResults,
-  getAuthenticatedUser,
   parseCookies,
 } from "payload/auth";
 
 export const auth = async ({ headers, payload }) => {
   const cookies = parseCookies(headers);
 
-  //   console.log(cookies);
-
-  const user = await getAuthenticatedUser({
+  const user = await executeAuthStrategies({
     cookies,
     headers,
     payload,

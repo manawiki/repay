@@ -37,10 +37,10 @@ const config = await loadConfig("./payload.config.ts");
 const payload = await getPayload({ config });
 
 const remixHandler = createRequestHandler({
-  // @ts-expect-error
   build: vite
     ? () => vite.ssrLoadModule("virtual:remix/server-build")
-    : await import("./build/server/index.js"),
+    : // @ts-expect-error
+      await import("./build/server/index.js"),
   async getLoadContext(req, res) {
     // @ts-expect-error
     const headers = new Headers(req.headers);
