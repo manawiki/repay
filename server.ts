@@ -6,8 +6,8 @@ import dotenv from "dotenv";
 import next from "next";
 
 import { createRequestHandler } from "@remix-run/express";
-import { loadConfig } from "./loadConfig.js";
 import { auth } from "./auth.js";
+import { importConfig } from "payload/node";
 
 dotenv.config();
 
@@ -33,7 +33,7 @@ const vite =
       );
 
 // initiate payload local API
-const config = await loadConfig("./payload.config.ts");
+const config = await importConfig("./payload.config.ts");
 const payload = await getPayload({ config });
 
 const remixHandler = createRequestHandler({

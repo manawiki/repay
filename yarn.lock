@@ -2036,47 +2036,40 @@
   dependencies:
     which "^3.0.0"
 
-"@payloadcms/db-mongodb@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/db-mongodb/-/db-mongodb-3.0.0-alpha.48.tgz#7e13fe93f80d93dcdbc9f7b510bfc176193610e2"
-  integrity sha512-WkW56PUkzBZ3BLDxRzkZoWHBZ9hSQxR6qOIwXupBieoAlyNVVTRfBvyNRpuLIuZCELZGO7m5dPWsRB+zRQKFig==
+"@payloadcms/db-mongodb@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/db-mongodb/-/db-mongodb-3.0.0-beta.19.tgz#99e9664046e1acaba783b78948193bc76200c069"
+  integrity sha512-kT0dro1yipzi7cdJUN9fHJjq+F3mw9mchqgOoWSgYs0cQKaEzrgI6GmS7/7wOtZdVH4XaJtPYYEKfxy+nCk5Xw==
   dependencies:
     bson-objectid "2.0.4"
     deepmerge "4.3.1"
     get-port "5.1.1"
     http-status "1.6.2"
     mongoose "6.12.3"
-    mongoose-aggregate-paginate-v2 "1.0.6"
     mongoose-paginate-v2 "1.7.22"
     prompts "2.4.2"
     uuid "9.0.0"
 
-"@payloadcms/graphql@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/graphql/-/graphql-3.0.0-alpha.48.tgz#c5a9cc6ae491f419d8162afc5683cb9a450ee298"
-  integrity sha512-88Y+m6+9F744sY5DR5o2QEqetNsNi0nBSptR7i/RXgbfHgUCdGsGY1f0MaAdOxW9CjXfrEqb2X0a412CScGcOw==
+"@payloadcms/graphql@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/graphql/-/graphql-3.0.0-beta.19.tgz#b80669efba568158d08231de86b29d3f99f0c230"
+  integrity sha512-gjE2CootXE++II3Dyw1PSHNSKoz/jQxPP9PqpdV1KPFzvMEXx+gjtcl2qS5golTDirnbMeO3857VU0Qsu/qM4A==
   dependencies:
-    graphql "16.8.1"
-    graphql-http "^1.22.0"
-    graphql-playground-html "1.6.30"
-    graphql-query-complexity "0.12.0"
     graphql-scalars "1.22.2"
-    graphql-type-json "0.3.2"
     pluralize "8.0.0"
 
-"@payloadcms/next@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/next/-/next-3.0.0-alpha.48.tgz#6f1f061fd51f71895fb82206ce81b3320e93320a"
-  integrity sha512-kctShnyaOENvjwKSdHdecw12gYsFI4y6HYNvTE9jkek0ZCaVpg/aKcjLwUoR0QfQktmz21D6WYo3hMinKS8Mog==
+"@payloadcms/next@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/next/-/next-3.0.0-beta.19.tgz#65b19c0c71981a83d02e0e313a615fb74d4b3977"
+  integrity sha512-P31yvkhDhamca+ISNgOVVU2hwvnumkkUInMnGdmw2St88ltfcMyglR8BCXyyLtCxOvz/gra45lszc9Gu17bq+w==
   dependencies:
     "@dnd-kit/core" "6.0.8"
-    "@payloadcms/graphql" "3.0.0-alpha.48"
-    "@payloadcms/translations" "3.0.0-alpha.48"
-    "@payloadcms/ui" "3.0.0-alpha.48"
+    "@payloadcms/graphql" "3.0.0-beta.19"
+    "@payloadcms/translations" "3.0.0-beta.19"
+    "@payloadcms/ui" "3.0.0-beta.19"
     "@types/busboy" "^1.5.3"
     busboy "^1.6.0"
     deep-equal "2.2.2"
-    graphql "16.8.1"
     graphql-http "^1.22.0"
     graphql-playground-html "1.6.30"
     path-to-regexp "^6.2.1"
@@ -2086,10 +2079,10 @@
     sass "^1.71.1"
     ws "^8.16.0"
 
-"@payloadcms/richtext-lexical@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-alpha.48.tgz#baf5412bff0e4ab9c6cea8da4fed80c01a6bceb2"
-  integrity sha512-wlqs36w3Ag6mRfSEPj/IAGS97rPROY0Q6ksR+8d7+r+7oqGLQOELpopJg7mz61wqmCs3eM6ijNeheOfgx1jrgg==
+"@payloadcms/richtext-lexical@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.19.tgz#61ce6fe7cfcb38fabd82534b70fa36ee7de728a4"
+  integrity sha512-IdiIQx3LP6ym+wzADk62fqTZtRlNdJuQFAD3WWWSgknGU8ktJ957VKSNT+ng2dA65MQMMhct81kXTAFRcaHrsA==
   dependencies:
     "@faceless-ui/modal" "2.0.2"
     "@lexical/headless" "0.13.1"
@@ -2107,20 +2100,18 @@
     json-schema "^0.4.0"
     lexical "0.13.1"
     lodash "4.17.21"
-    react "18.2.0"
-    react-dom "18.2.0"
     react-error-boundary "4.0.12"
     ts-essentials "7.0.3"
 
-"@payloadcms/translations@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/translations/-/translations-3.0.0-alpha.48.tgz#11167e4c0931824a04ed0aba01e263b331eaa64b"
-  integrity sha512-ncBR724ZtXbrmUhgwusgLeulvaT+e/8LrMnTGed22P0VK3M+vE/ghimqcdZ4M6kHTsJTigFV4hG1Wkt9SBH70Q==
+"@payloadcms/translations@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/translations/-/translations-3.0.0-beta.19.tgz#4062b82da5d73acc3555a312e63f75fd72d2b4bb"
+  integrity sha512-io9LDjOHd8cMzdv63V3kQkyERJZJSG0edlYbVgRBJKzKkNOwJhNcw32duWZenyyHJmvqEuHHaTuri/S6d7ABpQ==
 
-"@payloadcms/ui@3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@payloadcms/ui/-/ui-3.0.0-alpha.48.tgz#a4b7424d657ebd922f952d95714958ce7a8f9856"
-  integrity sha512-HUAmWF2wxRR5dv5jM6Ebx1eVRFfO93XwWL4W68TPNoT62JLHLJDA3tKq7jPlJJCWeWmO/9EEu/KC9XVFmqdKWQ==
+"@payloadcms/ui@3.0.0-beta.19":
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@payloadcms/ui/-/ui-3.0.0-beta.19.tgz#4009a7c07df55817dd150698617eded065df5f98"
+  integrity sha512-CF9tdez++XVLrB35yOCLifgkXoNMuV+cEVH59d3SCm4dhepwahXPbyTxh99lLiF+zHHSEmgR4aMa0rtCXYDwbw==
   dependencies:
     "@dnd-kit/core" "6.0.8"
     "@dnd-kit/sortable" "7.0.2"
@@ -2128,7 +2119,7 @@
     "@faceless-ui/scroll-info" "1.3.0"
     "@faceless-ui/window-info" "2.1.2"
     "@monaco-editor/react" "4.5.1"
-    "@payloadcms/translations" "3.0.0-alpha.48"
+    "@payloadcms/translations" "3.0.0-beta.19"
     body-scroll-lock "4.0.0-beta.0"
     bson-objectid "2.0.4"
     date-fns "3.3.1"
@@ -3089,6 +3080,13 @@
   resolved "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
+"@types/needle@*":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@types/needle/-/needle-3.3.0.tgz#4efe9c27b4ffed8b5b9f2025dab75931877daac0"
+  integrity sha512-UFIuc1gdyzAqeVUYpSL+cliw2MmU/ZUhVZKE7Zo4wPbgc8hbljeKSnn6ls6iG8r5jpegPXLUIhJ+Wb2kLVs8cg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/node@*":
   version "20.4.2"
   resolved "https://registry.npmjs.org/@types/node/-/node-20.4.2.tgz"
@@ -3110,6 +3108,14 @@
   version "2.7.3"
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.7.3.tgz"
   integrity sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==
+
+"@types/probe-image-size@^7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@types/probe-image-size/-/probe-image-size-7.2.4.tgz#337af8343d60dd8d94a4497435e7ef8a8a8b889b"
+  integrity sha512-HVqYj3L+D+S/6qpQRv5qMxrD/5pglzZuhP7ZIqgVSZ+Ck4z1TCFkNIRG8WesFueQTqWFTSgkkAl6f8lwxFPQSw==
+  dependencies:
+    "@types/needle" "*"
+    "@types/node" "*"
 
 "@types/prop-types@*":
   version "15.7.11"
@@ -3413,7 +3419,7 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.0.0, ajv@^8.6.3:
+ajv@^8.0.0, ajv@^8.12.0, ajv@^8.6.3:
   version "8.12.0"
   resolved "https://registry.npmjs.org/ajv/-/ajv-8.12.0.tgz"
   integrity sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==
@@ -3982,6 +3988,11 @@ chownr@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
+
+ci-info@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-4.0.0.tgz#65466f8b280fc019b9f50a5388115d17a63a44f2"
+  integrity sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==
 
 classnames@^2.2.5, classnames@^2.2.6, classnames@^2.3.1:
   version "2.5.1"
@@ -5781,13 +5792,6 @@ graphql-playground-html@1.6.30:
   dependencies:
     xss "^1.0.6"
 
-graphql-query-complexity@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/graphql-query-complexity/-/graphql-query-complexity-0.12.0.tgz#5f636ccc54da82225f31e898e7f27192fe074b4c"
-  integrity sha512-fWEyuSL6g/+nSiIRgIipfI6UXTI7bAxrpPlCY1c0+V3pAEUo1ybaKmSBgNr1ed2r+agm1plJww8Loig9y6s2dw==
-  dependencies:
-    lodash.get "^4.4.2"
-
 graphql-scalars@1.22.2:
   version "1.22.2"
   resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.22.2.tgz#6326e6fe2d0ad4228a9fea72a977e2bf26b86362"
@@ -5795,12 +5799,7 @@ graphql-scalars@1.22.2:
   dependencies:
     tslib "^2.5.0"
 
-graphql-type-json@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.3.2.tgz#f53a851dbfe07bd1c8157d24150064baab41e115"
-  integrity sha512-J+vjof74oMlCWXSvt0DOf2APEdZOCdubEvGDUAlqH//VBYcOYsGgRW7Xzorr44LvkjiuvecWc8fChxuZZbChtg==
-
-graphql@16.8.1:
+graphql@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.8.1.tgz#1930a965bef1170603702acdb68aedd3f3cf6f07"
   integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
@@ -6660,11 +6659,6 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
-
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
@@ -7396,11 +7390,6 @@ mongodb@4.17.1:
     "@aws-sdk/credential-providers" "^3.186.0"
     "@mongodb-js/saslprep" "^1.1.0"
 
-mongoose-aggregate-paginate-v2@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/mongoose-aggregate-paginate-v2/-/mongoose-aggregate-paginate-v2-1.0.6.tgz#fd2f2564d1bbf52f49a196f0b7b03675913dacca"
-  integrity sha512-UuALu+mjhQa1K9lMQvjLL3vm3iALvNw8PQNIh2gp1b+tO5hUa0NC0Wf6/8QrT9PSJVTihXaD8hQVy3J4e0jO0Q==
-
 mongoose-paginate-v2@1.7.22:
   version "1.7.22"
   resolved "https://registry.yarnpkg.com/mongoose-paginate-v2/-/mongoose-paginate-v2-1.7.22.tgz#9f178fe5fb71597e231639adac84d3ab9a96c62a"
@@ -7538,11 +7527,6 @@ node-releases@^2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.14.tgz#2ffb053bceb8b2be8495ece1ab6ce600c4461b0b"
   integrity sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==
-
-nodemailer@6.9.10:
-  version "6.9.10"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.10.tgz#54cc1e062f20726606d3289fcf38ee731aff0d9d"
-  integrity sha512-qtoKfGFhvIFW5kLfrkw2R6Nm6Ur4LNUMykyqu6n9BRKJuyQrqEGwdXXUAbwWEKt33dlWUGXb7rzmJP/p4+O+CA==
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
@@ -7971,15 +7955,18 @@ pathe@^1.1.0, pathe@^1.1.1:
   resolved "https://registry.npmjs.org/pathe/-/pathe-1.1.1.tgz"
   integrity sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==
 
-payload@3.0.0-alpha.48:
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/payload/-/payload-3.0.0-alpha.48.tgz#526d590a701888bc9e728f922c3fa6dff3c21200"
-  integrity sha512-+wVkk0AW9E0SoSYKvsxrkDikASXHYgUN+sCq/9cqyeEaGGeD3IDOE5Y0yWYVkYXtMKERFsSt7PRhiXPo/SqbNg==
+payload@3.0.0-beta.19:
+  version "3.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/payload/-/payload-3.0.0-beta.19.tgz#302bb9e4348c8651255525d85c5999d9130d5271"
+  integrity sha512-sZvLUa8gO5CEODn8FDM+CZ9RUbRJxM1LAa8Do/MSBZ+XSd242rCad4Zk1qd8CBFwTcBMCG7ISfOAt/uxgzjyaQ==
   dependencies:
-    "@payloadcms/translations" "3.0.0-alpha.48"
+    "@payloadcms/translations" "3.0.0-beta.19"
     "@swc-node/core" "^1.13.0"
     "@swc-node/sourcemap-support" "^0.5.0"
+    "@types/probe-image-size" "^7.2.4"
+    ajv "^8.12.0"
     bson-objectid "2.0.4"
+    ci-info "^4.0.0"
     conf "10.2.0"
     console-table-printer "2.11.2"
     dataloader "2.2.2"
@@ -7996,14 +7983,13 @@ payload@3.0.0-alpha.48:
     minimist "1.2.8"
     mkdirp "1.0.4"
     monaco-editor "0.38.0"
-    nodemailer "6.9.10"
     pino "8.15.0"
     pino-pretty "10.2.0"
-    pirates "^4.0.6"
     pluralize "8.0.0"
     sanitize-filename "1.6.3"
     scheduler "0.23.0"
     scmp "2.1.0"
+    uuid "^9.0.1"
 
 peek-readable@^4.1.0:
   version "4.1.0"
@@ -8108,7 +8094,7 @@ pino@8.15.0:
     sonic-boom "^3.1.0"
     thread-stream "^2.0.0"
 
-pirates@^4.0.1, pirates@^4.0.6:
+pirates@^4.0.1:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.6.tgz#3018ae32ecfcff6c29ba2267cbf21166ac1f36b9"
   integrity sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==
@@ -8469,7 +8455,7 @@ react-diff-viewer-continued@3.2.6:
     memoize-one "^6.0.0"
     prop-types "^15.8.1"
 
-react-dom@18.2.0, react-dom@^18.2.0:
+react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -8570,7 +8556,7 @@ react-transition-group@^4.3.0, react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@18.2.0, react@^18.2.0:
+react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -9974,7 +9960,7 @@ uuid@9.0.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
   integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
-uuid@9.0.1:
+uuid@9.0.1, uuid@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
