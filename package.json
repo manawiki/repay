@@ -30,7 +30,7 @@
     "graphql": "^16.8.1",
     "isbot": "^5.1.0",
     "morgan": "^1.10.0",
-    "next": "14.2.0-canary.7",
+    "next": "14.3.0-canary.7",
     "payload": "3.0.0-beta.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
