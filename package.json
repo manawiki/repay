@@ -8,7 +8,7 @@
     "build:payload": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "build:server": "tsc -p tsconfig.server.json",
     "dev": "tsx server.ts",
-    "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production tsx server.ts",
+    "start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "generate:types": "payload generate:types",
     "clean": "shx rm -rf node_modules dist build public/build",
     "typecheck": "tsc"
