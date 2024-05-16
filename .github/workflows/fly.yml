@@ -2,7 +2,7 @@ name: Fly Deploy
 on:
   push:
     branches:
-      - payload-3
+      - payload-v3
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
